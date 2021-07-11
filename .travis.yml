@@ -20,16 +20,16 @@ after_success:
   - docker push danilucaci/multi-server
   - docker push danilucaci/multi-worker
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "eu-west-1"
-#   app: "multiple-services"
-#   env: "Reactapp"
-#   bucket_name: "elasticbeanstalk-eu-west-1-450943128072"
-#   bucket_path: "multiple-services"
-#   on:
-#     branch: main
-#   access_key_id: "$AWS_ACCESS_KEY"
-#   secret_access_key: "$AWS_SECRET_KEY"
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-1"
+  app: "multi-docker"
+  env: "Multidocker-prod"
+  bucket_name: "elasticbeanstalk-eu-west-1-450943128072"
+  bucket_path: "multi-docker"
+  on:
+    branch: main
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
 
 language: generic
